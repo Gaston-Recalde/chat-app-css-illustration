@@ -37,12 +37,27 @@ body{
     background-color: var(--Light-Grayish-Violet);
 }
 
+main{
+    overflow: hidden;
+}
+
+.fondo{
+    position: absolute;
+    width: 350px;
+    height: 610px;
+    left: -150px;
+    background-image: linear-gradient(to top, var(--Light-Violet), var(--Light-Magenta) );
+    z-index: -1;
+    border-radius: 0 0 69% 0;
+}
+
 .telephone{
-    margin: 30px auto;
-    width: 320px;
+    margin: 75px auto 30px;
+    width: 275px;
     background-color: var(--White);
     border-radius: 1.5rem;
     padding: .6rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .telephone__content{
@@ -62,6 +77,7 @@ body{
     position: relative;
     grid-area: top;
     background-image: linear-gradient(to left, var(--Light-Magenta), var(--Light-Violet));
+    border-radius: 0 0 .5rem .5rem;
 }
 
 .telephone__top::before{
@@ -69,9 +85,9 @@ body{
     position: absolute;
     left: 20%;
     right: 20%;
-    height: 30px;
+    height: 20px;
     background-color: var(--White);
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 15px 15px;
 }
 
 .telephone__user{
@@ -99,15 +115,16 @@ body{
 }
 
 .telephone__name{
-    font-size: 1rem;
+    font-size: .8rem;
+    margin-bottom: 5px;
 }
 
 .telephone__status{
-    font-size: .8rem;
+    font-size: .6rem;
     color: var(--Pale-Violet);
 }
 
-.telephone__dots{
+.telephone__ellipsis{
     margin-left: auto;
     width: 24px;
 }
@@ -116,51 +133,57 @@ body{
     grid-area: main;
     width: 90%;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: .6rem 0;
     display: grid;
-    gap: 1rem;
+    gap: .6rem;
     grid-auto-rows: max-content;
 }
 
 .telephone__chat{
-    width: 75%;
-    background-color: var(--Dark-Grayish-Violet);
+    width: 74%;
+    background-color: hsl(270, 7%, 64%, 20%);
     color: var(--Moderate-Violet);
-    padding: 1rem;
-    border-radius: 1rem 1rem 1rem .5rem;
+    padding: .7rem;
+    border-radius: .7rem .7rem .7rem 0rem;
+    font-size: 11px;
 }
 
 .telephone__dogs{
     justify-self: end;
     display: grid;
     grid-auto-flow: column;
-    gap: .7rem;
+    gap: .3rem;
     grid-auto-columns: max-content;
 }
 
 .telephone__puppy{
-    width: 70px;
-    border-radius: 1rem;
+    width: 50px;
+    border-radius: .65rem;
 }
 
 .telephone__chat--right{
     justify-self: end;
-    border-radius: 1rem 1rem .5rem 1rem;
+    border-radius: 1rem 1rem 0rem 1rem;
     background-color: var(--White);
     color: var(--Desaturated-Dark-Violet);
 }
 
+.telephone__chat_2{
+    width: auto;
+    text-align: end;
+}
+
 .telephone__form{
     display: grid;
-    gap: 1rem;
+    gap: .7rem;
 }
 
 .telephone__plan{
-    width: 85%;
+    width: 80%;
     background-image: linear-gradient(to left, var(--Light-Magenta), var(--Light-Violet));
     color: var(--White);
-    border-radius: 1rem 1rem 1rem .5rem;
-    padding: 1rem;
+    border-radius: .7rem .7rem .7rem 0rem;
+    padding: .7rem;
     display: flex;
     align-items: center;
     gap: .4rem;
@@ -170,19 +193,23 @@ body{
     appearance: none;
     width: 20px;
     height: 20px;
-    border: 1px solid var(--White);
+    border: 1px solid var(--Very-Light-Magenta);
     border-radius: 50%;
     transition: box-shadow .3s;
 }
 
+.telephone__radio:hover{
+    cursor: pointer;
+}
+
 .telephone__radio:checked{
-    box-shadow: 0 0 0 4px var(--White) inset;
+    box-shadow: 0 0 0 2px var(--Very-Light-Magenta) inset;
 }
 
 .telephone__price{
     margin-left: auto;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .telephone__input{
@@ -192,13 +219,16 @@ body{
     outline: none;
 }
 
+.telephone__label{
+    font-size: 11px;
+}
+
 .telephone__type{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: .5rem;
     background-color: var(--White);
-    padding: 1rem 1rem 1rem 1.5rem;
+    padding: .7rem .7rem .7rem 1.2rem;
     border-radius: 3rem;
 }
 
@@ -209,5 +239,77 @@ body{
     width: 24px;
 }
 
-.attribution { font-size: 11px; text-align: center; }
+.info{
+    margin: 50px 30px;
+    text-align: center;
+}
+
+.info__h1{
+    color: var(--Very-Dark-Desaturated-Violet);
+    margin-bottom: 35px;
+}
+
+.info__p{
+    line-height: 1.5;
+    color: var(--Dark-Grayish-Violet);
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width:768px) {
+    .info__h1{
+        font-size: 48px;
+    }
+
+    .fondo{
+        height: 750px;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    main{
+        display: flex;
+        align-items: center;
+    }
+
+    .fondo{
+        top: -100px;
+    }
+
+    .info{
+        text-align: left;
+        margin: 50px 50px;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    main{
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    .fondo{
+        width: 500px;
+        height: 800px;
+        border-radius: 0 0 250px 250px;
+    }
+
+    .info{
+        position: relative;
+        left: -150px;
+    }
+
+    .fondo2{
+        position: absolute;
+        z-index: -1;
+        width: 500px;
+        height: 800px;
+        border-radius: 250px 250px 0 0;
+        bottom: 0;
+        right: 0;
+        background-color: hsl(270, 7%, 64%, 20%);
+    }
+}
+
+.attribution {  font-size: 11px; text-align: center; padding-bottom: 25px; }
 .attribution a { color: hsl(228, 45%, 44%); }
